@@ -46,28 +46,28 @@ class  SmsNotification  extends  Notification
 
 ### example send notify
 ```php
-	$user->notify(new SmsNotification());
+$user->notify(new SmsNotification());
 ```
 
 ### example send sms manual
 ```php
-	Rlgroups\Smsrl\Services\Smsrl::send('000-0000000', 'Test');
+Rlgroups\Smsrl\Services\Smsrl::send('000-0000000', 'Test');
 ```
 
 ### or 
 ```php
-	...
-	use Rlgroups\Smsrl\Services\Message;
-	use Rlgroups\Smsrl\Services\Smsrl;
-	...
-	
-	$message = (new  Message())
-		->line('line 1')
-		->line()
-		->line('line 3')
-		->line('line 4');
-			
-	Smsrl::send('000-0000000', $message->toString());
+...
+use Rlgroups\Smsrl\Services\Message;
+use Rlgroups\Smsrl\Services\Smsrl;
+...
+
+$message = (new  Message())
+	->line('line 1')
+	->line()
+	->line('line 3')
+	->line('line 4');
+
+Smsrl::send('000-0000000', $message->toString());
 ```
 
 
