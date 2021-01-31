@@ -1,0 +1,30 @@
+{
+    "name": "rlgroups/smsrl",
+    "description": "Laravel Notify via sms RL",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rl-groups",
+            "email": "yehuda.p@rami-levy.co.il"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "^6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rlgroups\\Smsrl\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rlgroups\\Smsrl\\Providers\\SmsrlServiceProvider"
+            ]
+        }
+    }
+}
