@@ -5,41 +5,41 @@
 
 ### ENV
 	SMSRL_SERVER=http://server.test/
-    SMSRL_KEY=***
-    SMSRL_SECRET=****
-    SMSRL_TEST_PHONE=000-0000000
+	SMSRL_KEY=***
+	SMSRL_SECRET=****
+	SMSRL_TEST_PHONE=000-0000000
 
 ### Notify for User.php
 ```php
-    public  function  routeNotificationForSmsrl()
-	{
-		return  '000-0000000';
-	}
+public  function  routeNotificationForSmsrl()
+{
+	return  '000-0000000';
+}
 ```
 
 ### SmsNotification.php Example
 ```php
 <?php
-	namespace  App\Notifications;
+namespace  App\Notifications;
 
-	use Illuminate\Bus\Queueable;
-	use Rlgroups\Smsrl\Services\Message;
-	use Illuminate\Notifications\Notification;
+use Illuminate\Bus\Queueable;
+use Rlgroups\Smsrl\Services\Message;
+use Illuminate\Notifications\Notification;
 
-	class  SmsNotification  extends  Notification
-	{
-		use  Queueable;
+class  SmsNotification  extends  Notification
+{
+	use  Queueable;
 
-		public function via($notifiable) {
-			return ['smsrl'];
-		}
-
-		public function toSmsrl($notifiable) {
-			return (new  Message())
-				->line('line 1')
-				->line()
-				->line('line 3')
-				->line('line 4');
-		}
+	public function via($notifiable) {
+		return ['smsrl'];
 	}
+
+	public function toSmsrl($notifiable) {
+		return (new  Message())
+			->line('line 1')
+			->line()
+			->line('line 3')
+			->line('line 4');
+	}
+}
 ```
